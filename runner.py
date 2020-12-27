@@ -211,7 +211,7 @@ class FinishHandler:
 
 def vehicle_manipulation():
     # この下に好きにコードを書いてください.
-    print("111")
+
     # この上に好きにコードを書いてください.
     pass
 

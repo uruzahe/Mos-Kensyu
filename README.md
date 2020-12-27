@@ -38,8 +38,32 @@ git clone https://github.com/uruzahe/Mos-Kensyu.git
 
 成功した場合，mos-kensyu というディレクトリがダウンロードされる．
 
+mos-kensyu ディレクトリに移動し，以下のコマンドを実行する
+```sh
+# ex. git checkout -b kensyu_yoshida
+git checkout -b kensyu_{自分の名前}
+```
+
+git のコマンド一覧を下記に書くので，適宜使用する．
+```sh
+# 現在のブランチを確認
+git branch
+
+# 変更差分を確認
+git status
+
+# 変更差分を仮登録にする．
+git add .
+
+# 仮登録された変更差分に名前をつけて保存する．
+git commit -m "仮差分をまとめた名前"
+
+# 保村した変更差分をリモートサーバに反映させ
+git push origin kensyu_{自分の名前}
+```
+
 ## 4
-mos-kensyu ディレクトリに移動し，以下のコマンドが実行できるか確認
+以下のコマンドが実行できるか確認
 
 ```sh
 # 1台の車両が道路を走行するシナリオ

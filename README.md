@@ -36,7 +36,7 @@ git がインストールされていれば以下のコマンドが使えるよ�
 git
 ```
 
-## 3 git を使いこなす．
+## git を使いこなす．
 適当なディレクトリを作成し，ディレクトリ内で以下のコマンドを実行する．
 ```sh
 git clone https://github.com/uruzahe/Mos-Kensyu.git
@@ -68,7 +68,7 @@ git commit -m "仮差分をまとめた名前"
 git push origin kensyu_{自分の名前}
 ```
 
-## 4 サンプルコードの実行
+## サンプルコードの実行
 以下のコマンドが実行できるか確認
 
 ```sh
@@ -85,7 +85,7 @@ python runner.py --sample --sample_num N
 python runner.py --sample --sample_num N --unapply_prop
 ```
 
-## 5 改善するべき特性を１つ決定し， 車両台数に対する特性の変化をグラフ化する．
+## 改善するべき特性を１つ決定し， 車両台数に対する特性の変化をグラフ化する．
 
 SUMO標準のメソッド(getSpeed メソッド等)を使用することで様々な特性（速度等）を取得することができる（下記のサイトを参考に）
 
@@ -130,7 +130,7 @@ python runner.py --sample --sample_num 100 --unapply_prop
 
 "./result/all/" ディレクトリ配下にそれぞれの特性が出力されるので，Excel や matplotlib 等を使用して，車両台数に対する特性の変化をグラフ化する．
 
-## 6 自分が選んだ特性を改善するように車両を制御する．
+## 自分が選んだ特性を改善するように車両を制御する．
 
 SUMO標準のメソッド(setSpeed メソッド等)を使用することで車両を制御することができる（下記のサイトを参考に）
 

@@ -22,6 +22,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
+import csv
 import os
 import sys
 import optparse
@@ -141,23 +142,57 @@ class ArrivedVehicleHandler:
         self.arrived_vehicles.extend(traci.simulation.getArrivedIDList())
         self.arrived_vehicles = list(set(self.arrived_vehicles))
 
-class EvaluationHandler():
-    def __init__(self):
+class EvaluationHandler:
+    ALL_RESULT_PATH = "./result/all/"
+    SUMMARY_RESULT_PATH = "./result/summary/"
+
+    def __init__(self, veh_num, apply_prop, method_name):
         self.data = []
+        self.veh_num = veh_num
+        self.apply_prop = apply_prop
+        self.method_name = method_name
 
     def snapshot(self):
         for veh_id in traci.vehicle.getIDList():
             self.data.append(self.formatted_data(veh_id))
-        pass
 
     def formatted_data(self, veh_id):
         formatted_data = {
             "id": veh_id,
-            "time": traci.simulation.getCurrentTime(),
+            "time": traci.simulation.getTime(),
+            "speed": traci.vehicle.getSpeed(veh_id),
         }
 
         return formatted_data
 
+    def save_as_csv(self, file_path, dict_data):
+        try:
+            with open(file_path, 'w') as csvfile:
+                writer = csv.DictWriter(csvfile, fieldnames=dict_data[0].keys())
+                writer.writeheader()
+                for data in dict_data:
+                    writer.writerow(data)
+
+        except IOError:
+            print("I/O error")
+
+    def save_all(self):
+        self.save_as_csv(EvaluationHandler.ALL_RESULT_PATH + self.save_file_name(), self.data)
+
+    def save_summary(self):
+        self.save_as_csv(EvaluationHandler.SUMMARY_RESULT_PATH + self.save_file_name(), self.summary_data())
+
+    def save_file_name(self):
+        return f"{self.method_name}_num_{self.veh_num}_apply_prop_{self.apply_prop}.csv"
+
+    def summary_data(self):
+        all_vehicle_speed_list = [d["speed"] for d in self.data]
+
+        summary_data = [{
+            "average_speed": sum(all_vehicle_speed_list) / len(all_vehicle_speed_list)
+        }]
+
+        return summary_data
 
 class FinishHandler:
     ARRIVED_VEHICLE_THRETHOLD = 100
@@ -174,33 +209,48 @@ class FinishHandler:
 
         return False
 
+def vehicle_manipulation():
+    # この下に好きにコードを書いてください.
+    print("111")
+    # この上に好きにコードを書いてください.
+    pass
 
-def run(add_vehicle_handler, arrived_vehicle_handler, finish_handler, evaluation_handler):
+def run(apply_prop, add_vehicle_handler, arrived_vehicle_handler, finish_handler, evaluation_handler):
     """execute the TraCI control loop"""
     add_vehicle_handler.add_vehicles(AddVehicleHandler.ADD_VEHICLE_NUM_AT_SAME_TIME)
 
     while finish_handler.is_finish(arrived_vehicle_handler.arrived_vehicles) is False:
         arrived_vehicle_handler.update_arrived_vehicles()
-        add_vehicle_handler.add_vehicle_handle(traci.simulation.getCurrentTime())
+        add_vehicle_handler.add_vehicle_handle(traci.simulation.getTime())
         evaluation_handler.snapshot()
-        # この下に好きにコードを書いてください.
 
-        # この上に好きにコードを書いてください.
+        if apply_prop is True:
+            vehicle_manipulation()
+        else:
+            pass
+
         traci.simulationStep()
 
+    evaluation_handler.save_all()
+    evaluation_handler.save_summary()
     traci.close()
     sys.stdout.flush()
 
-def sample(sample_num, add_vehicle_handler, arrived_vehicle_handler, finish_handler, evaluation_handler):
+def sample(apply_prop, sample_num, add_vehicle_handler, arrived_vehicle_handler, finish_handler, evaluation_handler):
     add_vehicle_handler.add_vehicles(sample_num)
 
     while 0 < traci.simulation.getMinExpectedNumber():
         evaluation_handler.snapshot()
-        # この下に好きにコードを書いてください.
 
-        # この上に好きにコードを書いてください.
+        if apply_prop is True:
+            vehicle_manipulation()
+        else:
+            pass
+
         traci.simulationStep()
 
+    evaluation_handler.save_all()
+    evaluation_handler.save_summary()
     traci.close()
     sys.stdout.flush()
 
@@ -213,6 +263,8 @@ def get_options():
                          default=False, help="run with only one vehicle")
     optParser.add_option("--sample_num", action="store", type="int",
                          default=1, help="the number of vehicles in a sample scenario")
+    optParser.add_option("--unapply_prop", action="store_true",
+                         default=False, help="flag to decide applying the proposed method.")
     options, args = optParser.parse_args()
     return options
 
@@ -240,12 +292,16 @@ if __name__ == "__main__":
         "--random"
     ])
 
-    add_vehicle_handler = AddVehicleHandler(traci.simulation.getCurrentTime())
+    add_vehicle_handler = AddVehicleHandler(traci.simulation.getTime())
     arrived_vehicle_handler = ArrivedVehicleHandler()
-    evaluation_handler = EvaluationHandler()
     finish_handler = FinishHandler()
+    apply_prop = (not options.unapply_prop)
 
     if options.sample:
-        sample(options.sample_num, add_vehicle_handler, arrived_vehicle_handler, finish_handler, evaluation_handler)
+        evaluation_handler = EvaluationHandler(options.sample_num, apply_prop, "sample")
+        print(f">> This code saves its results into {EvaluationHandler.ALL_RESULT_PATH + evaluation_handler.save_file_name()}")
+        sample(apply_prop, options.sample_num, add_vehicle_handler, arrived_vehicle_handler, finish_handler, evaluation_handler)
     else:
-        run(add_vehicle_handler, arrived_vehicle_handler, finish_handler, evaluation_handler)
+        evaluation_handler = EvaluationHandler(AddVehicleHandler.ADD_VEHICLE_NUM_AT_SAME_TIME, apply_prop, "run")
+        print(f">> This code saves its results into {EvaluationHandler.ALL_RESULT_PATH + evaluation_handler.save_file_name()}")
+        run(apply_prop, add_vehicle_handler, arrived_vehicle_handler, finish_handler, evaluation_handler)

@@ -84,6 +84,16 @@ guiShape="passenger"/>
 #    </tlLogic>
 
 class AddVehicleHandler:
+    #  ----- 道路の構成 -----
+    # edge id: "1to2", lane id "1to2_0" --------------- | ----- edge id: "out"
+    # edge id: "1to2", lane id "1to2_1" --------------- | ----- edge id: "gneE7"
+    # edge id: "1to2", lane id "1to2_2" --------------- | ----- edge id: "gneE8"
+    # edge id: "1to2", lane id "1to2_3" --------------- | ----- edge id: "gneE9"
+
+    # ----- メモ -----
+    # 車両は　edge id: "1to2" のいずれかのレーン上に生成され，　
+    # edge id: "out" ~ "gneE9" のいずれかの道路が目的地として設定されている．
+
     ADD_VEHICLE_NUM_AT_SAME_TIME = 100
     ADD_VEHICLE_INTERVAL = 2000.0 * 1000   # (msec)
     START_EDGES = ["1to2"]
@@ -129,6 +139,7 @@ class AddVehicleHandler:
         traci.vehicle.add(new_vehicle_id, route_id, departLane="random")
         self.next_vehicle_index = self.next_vehicle_index + 1
 
+        print(f"veh_id: {new_vehicle_id:10}, destination edge: {traci.route.getEdges(route_id)[-1]:10}")
         return self.next_vehicle_index
 
     def update_next_vehicle_add_time(self, current_time):

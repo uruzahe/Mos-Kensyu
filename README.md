@@ -62,9 +62,9 @@ git status
 git add .
 
 # 仮登録された変更差分に名前をつけて保存する．
-git commit -m "仮差分をまとめた名前"
+git commit -m "仮登録をまとめた名前"
 
-# 保村した変更差分をリモートサーバに反映させ
+# 保存した変更差分をリモートサーバに反映させる
 git push origin kensyu_{自分の名前}
 ```
 
@@ -107,9 +107,9 @@ def formatted_data(self, veh_id):
 
 特性を取得するメソッドを追記後，以下のコマンドを実行し，"./result/all/" ディレクトリ配下に "sample_num_10_apply_prop_False.csv" が配置されることを確認
 ```sh
-python runner.py --sample --sample_num 10
+python runner.py --sample --sample_num 10 --unapply_prop
 ls ./result/all
-cat ./result/all/"num_10.csv"
+cat ./result/all/sample_num_10_apply_prop_False.csv
 ```
 
 成功すれば sample_num_10_apply_prop_False.csv 中に取得したい特性が追記されるので，excel等で開いて確認する．

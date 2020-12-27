@@ -77,8 +77,11 @@ git push origin kensyu_{自分の名前}
 python runner.py --sample
 
 # N台の車両が道路を走行するシナリオ
-# 徐々にシナリオを複雑にしていくためのコマンド
+# 徐々にシナリオを複雑にしていくために使用．
 python runner.py --sample --sample_num N
+
+# GUI無しでプログラムを実行する場合に使用．
+python runner.py --nogui --sample --sample_num N
 
 # 車両制御を行わないシナリオ
 # 何も制御を行わない場合の特性を取得する際に使用．

@@ -92,6 +92,7 @@ python runner.py --sample --sample_num N --unapply_prop
 
 SUMO標準のメソッド(getSpeed メソッド等)を使用することで様々な特性（速度等）を取得することができる（下記のサイトを参考に）
 
+https://sumo.dlr.de/daily/pydoc/traci.html
 https://sumo.dlr.de/daily/pydoc/traci._simulation.html
 
 所望の特性を取得するメソッドを確認し，runner.py 中の formatted_data メソッド中に特性を取得するメソッドを追記する．

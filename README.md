@@ -37,6 +37,10 @@ git
 ```
 
 ## git を使いこなす．
+
+gitに関する説明は下記のスライドを参照
+https://docs.google.com/presentation/d/1D48Ss_3Vysgoh8cOC6k6e-4sqC0lcTKa_6z93vpa-Rg/edit#slide=id.g84dd18d9ed_0_7
+
 適当なディレクトリを作成し，ディレクトリ内で以下のコマンドを実行する．
 ```sh
 git clone https://github.com/uruzahe/Mos-Kensyu.git

@@ -6,8 +6,10 @@ texの使い方，原稿の書き方（日本語，英語），スライドの�
 ## SUMO
 SUMOとgitの使い方、データの取得、グラフの作成
 
+<!--
 ## Omnet
-Omnet++の使い方
+Omnet++の使い方(under construction ...）
 
 ## NS3
-NS3の使い方
+NS3の使い方(under construction ...）
+-->

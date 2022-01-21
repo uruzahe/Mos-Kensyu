@@ -1,7 +1,4 @@
 ## 研修概要
 
-Under construction ...
-
-Docker でns3の環境を作成する．
-
-https://github.com/signetlabdei/millicar
+NS3のチュートリアルを進める．
+https://www.nsnam.org/docs/tutorial/ns-3-tutorial.pdf

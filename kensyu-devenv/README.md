@@ -24,6 +24,10 @@ vboxmanage --version
 
 https://www.vagrantup.com/downloads
 
+vagrantはバーチャルボックスを簡単に扱うためのツールである．vagrantコマンドの一覧は下記のURLから確認可能．
+
+https://qiita.com/oreo3@github/items/4054a4120ccc249676d9
+
 ## 研修環境構築
 
 #### debian(linux)の起動
@@ -107,3 +111,19 @@ cd ns-allinone-3.35
 # 研修環境
 ./ns3 run hello-simulator
 ```
+
+## その他
+
+#### シミュレータをビルドする際にメモリ不足になる．
+
+下記の方法のいくつかを実行し使用可能なメモリを増やす．
+
+- 研修環境にて不要なアプリが開いている場合は閉じる．
+- Vagrantfile中にて, vb.memoryの値を増加させる(vb.memory = 1024 * N )
+  - 自分のパソコンのメモリの半分くらいに設定しておくと良い
+  (ex. 自分のパソコンのメモリが8GBならN=4)
+  - ローカル環境にて不要なアプリ（chromeとか）開いている場合は閉じる．
+- Vagrantfile中にて, vb.gui = false に変更する
+  - デスクトップに割いていたメモリをビルドに使用可能になる．
+  - 作業は "vagrant ssh" にてターミナルに接続することで行う．
+  - 作業が終わったら vb.gui = true に変更し再起動．

@@ -103,13 +103,14 @@ wget https://www.nsnam.org/release/ns-allinone-3.35.tar.bz2
 tar xjf ns-allinone-3.35.tar.bz2
 cd ns-allinone-3.35
 ./build.py --enable-examples --enable-tests
+cd ns-3.35
 ./test.py
 ```
 
 インストール後，下記のコマンドにてサンプルコードが実行可能であることを確認する．
 ```sh
 # 研修環境
-./ns3 run hello-simulator
+./waf --run hello-simulator
 ```
 
 ## その他

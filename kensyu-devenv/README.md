@@ -88,6 +88,8 @@ omnetpp
 
 さらにチュートリアル用のモジュールをインストールするために下記の動画の"Launching OMNET(5:55 ~ 7:20)"の部分を実施する．
 
+7:20 辺りの"install INET Framework", "import OMNet++ programing examples"に<b>チェックを付けた状態で</b>OKを押す
+
 https://youtu.be/PfAWhrmoYgM?t=349
 
 #### NS3

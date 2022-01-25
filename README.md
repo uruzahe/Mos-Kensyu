@@ -18,3 +18,6 @@ NS3の使い方
 
 ## Omnet
 Omnet++の使い方
+
+## ML
+機械学習、ディープラーニングの基礎、kaggle、google colab

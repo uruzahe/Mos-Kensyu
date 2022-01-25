@@ -112,7 +112,7 @@ cd ns-allinone-3.35
 ./ns3 run hello-simulator
 ```
 
-## その他
+## その他（メモ，プラスアルファ）
 
 #### シミュレータをビルドする際にメモリ不足になる．
 
@@ -127,3 +127,70 @@ cd ns-allinone-3.35
   - デスクトップに割いていたメモリをビルドに使用可能になる．
   - 作業は "vagrant ssh" にてターミナルに接続することで行う．
   - 作業が終わったら vb.gui = true に変更し再起動．
+
+#### エディタの表示が重い．
+
+atomとか比較的重いエディタを使うと動きがもっさりします．
+
+"Sublime Text3"は軽量なのでおすすめです．下記の手順でインストール可能です．
+
+```sh
+# 研修環境
+sudo apt-get install apt-transport-https
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
+sudo apt-get install sublime-text
+```
+
+下記のコマンドのように適当なディレクトリを開ければインストール完了です．
+
+```sh
+subl ./ns3
+```
+
+#### それでもエディタが重い（X11 forwarding）
+
+"X11 forwarding"を使いましょう．下記の手順で設定してください．
+
+1. Vagrantfileに下記の行を追加し vagrant reload で再起動する．
+```
+Vagrant.configure("2") do |config|
+　　　config.vm.box = "debian/contrib-buster64"
+		config.ssh.forward_agent = true # <- 追加
+		config.ssh.forward_x11 = true　# <- 追加
+```
+
+2. 自分のパソコンにて x11 client の設定を行う．
+  - mac: xquartzのインストールと実行のみで良い．http://www.xquartz.org/
+  - windows:
+
+3. ローカル環境から研修環境にssh接続した後にターミナルからエディタが開けることを確認する．
+
+```sh
+# ローカル環境
+vagrant ssh
+
+# 研修環境
+subl ./ns3
+```
+
+#### 仮想環境中の表示が重い
+ Vagrantfile中のvb.customizeを下記のように変更し再起動する．
+
+ （これでも重かったらすいません．．．，ブラウザは重い傾向にあるのでローカル環境のブラウザを使った方が良いです．）
+
+ ```
+ vb.customize [
+     "modifyvm", :id,
+     "--vram", "256",
+     "--clipboard", "bidirectional",
+     "--accelerate3d", "on",
+     "--hwvirtex", "on",
+     "--nestedpaging", "on",
+     "--largepages", "on",
+     "--ioapic", "on",
+     "--pae", "on",
+     "--paravirtprovider", "kvm",
+   ]
+ ```

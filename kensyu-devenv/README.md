@@ -80,11 +80,13 @@ sumo-gui
 ```
 
 #### Omnet++
-研修環境にて既に実行可能な状態である．下記のコマンドが実行可能であることを確認する
+研修環境にて既に実行可能な状態である．下記のコマンドが実行可能であることを確認する．
 ``` sh
 # 研修環境
 omnetpp
 ```
+
+ワークスペースのパスには"/home/vagrant/Mos-Kensyu/omnet/workspace"を設定する．
 
 さらにチュートリアル用のモジュールをインストールするために下記の動画の"Launching OMNET(5:55 ~ 7:20)"の部分を実施する．
 
@@ -98,9 +100,7 @@ https://youtu.be/PfAWhrmoYgM?t=349
 
 ```sh
 # 研修環境
-cd
-mkdir ns3
-cd ns3
+cd ~/Mos-Kensyu/ns3
 wget https://www.nsnam.org/release/ns-allinone-3.35.tar.bz2
 tar xjf ns-allinone-3.35.tar.bz2
 cd ns-allinone-3.35
@@ -131,7 +131,7 @@ cd ns-3.35
   - 作業は "vagrant ssh" にてターミナルに接続することで行う．
   - 作業が終わったら vb.gui = true に変更し再起動．
 
-#### エディタの表示が重い．
+#### 仮想環境中のエディタが重い．
 
 atomとか比較的重いエディタを使うと動きがもっさりします．
 
@@ -149,7 +149,7 @@ sudo apt-get install sublime-text
 下記のコマンドのように適当なディレクトリを開ければインストール完了です．
 
 ```sh
-subl ./ns3
+subl .
 ```
 
 #### それでもエディタが重い（X11 forwarding）
@@ -197,3 +197,42 @@ subl ./ns3
      "--paravirtprovider", "kvm",
    ]
  ```
+
+#### Vagrantfileの書き方が分からない．
+
+困ったら下記の内容をVagrantfileにコピペしてください．
+
+```
+Vagrant.configure("2") do |config|
+    config.vm.box = "debian/contrib-buster64"
+		config.vm.synced_folder "./../../../Mos-Kensyu/", "/home/vagrant/Mos-Kensyu"
+		config.ssh.forward_agent = true
+		config.ssh.forward_x11 = true
+
+    config.vm.provision "ansible_local" do |ansible|
+      ansible.playbook = "ansible/vagrant.yml"
+    end
+
+    config.vm.provider :virtualbox do |vb|
+        # distinguish VMs by a location-dependent suffix
+        name_suffix = Digest::SHA1.hexdigest(Dir.pwd)[0..6]
+
+        vb.gui = true
+        vb.memory = 4096
+        vb.name = "Artery Vagrant VM " + name_suffix
+        vb.customize [
+					"modifyvm", :id,
+					"--vram", "256",
+      		"--chipset", "ich9",          # チップセット
+					"--ioapic", "on",             # I/O APICを有効化
+      		"--clipboard", "bidirectional",
+      		"--hwvirtex", "on",
+      		"--nestedpaging", "on",
+      		"--largepages", "on",
+      		"--ioapic", "on",
+      		"--pae", "on",
+      		"--paravirtprovider", "kvm",
+				]
+    end
+end
+```

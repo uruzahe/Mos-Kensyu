@@ -41,6 +41,16 @@ cd artery
 
 2. arteryディレクトリ内のVagrantfile中にて "vb.memory = 2048" を "vb.memory = 4096" に変更する．
 
+3. Vagrantfile を下記のように修正
+```
+Vagrant.configure("2") do |config|
+    config.vm.box = "debian/contrib-buster64"
+    # ----- 以下追加 -----
+    config.vm.synced_folder "./../../../Mos-Kensyu/", "/home/vagrant/Mos-Kensyu"
+    config.ssh.forward_agent = true
+    config.ssh.forward_x11 = true
+```
+
 3. 下記のコマンドにてdebian(linux)のデスクトップ環境を起動する
 ```sh
 # ローカル環境
@@ -131,6 +141,7 @@ cd ns-3.35
   - 作業は "vagrant ssh" にてターミナルに接続することで行う．
   - 作業が終わったら vb.gui = true に変更し再起動．
 
+<!--
 #### 仮想環境中のエディタが重い．
 
 atomとか比較的重いエディタを使うと動きがもっさりします．
@@ -156,19 +167,12 @@ subl .
 
 "X11 forwarding"を使いましょう．下記の手順で設定してください．
 
-1. Vagrantfileに下記の行を追加し vagrant reload で再起動する．
-```
-Vagrant.configure("2") do |config|
-　　　config.vm.box = "debian/contrib-buster64"
-		config.ssh.forward_agent = true # <- 追加
-		config.ssh.forward_x11 = true　# <- 追加
-```
 
-2. 自分のパソコンにて x11 client の設定を行う．
+1. 自分のパソコンにて x11 client の設定を行う．
   - mac: xquartzのインストールと実行のみで良い．http://www.xquartz.org/
   - windows:
 
-3. ローカル環境から研修環境にssh接続した後にターミナルからエディタが開けることを確認する．
+2. ローカル環境から研修環境にssh接続した後にターミナルからエディタが開けることを確認する．
 
 ```sh
 # ローカル環境
@@ -177,6 +181,7 @@ vagrant ssh
 # 研修環境
 subl ./ns3
 ```
+-->
 
 #### 仮想環境中の表示が重い
  Vagrantfile中のvb.customizeを下記のように変更し再起動する．
@@ -197,42 +202,3 @@ subl ./ns3
      "--paravirtprovider", "kvm",
    ]
  ```
-
-#### Vagrantfileの書き方が分からない．
-
-困ったら下記の内容をVagrantfileにコピペしてください．
-
-```
-Vagrant.configure("2") do |config|
-    config.vm.box = "debian/contrib-buster64"
-		config.vm.synced_folder "./../../../Mos-Kensyu/", "/home/vagrant/Mos-Kensyu"
-		config.ssh.forward_agent = true
-		config.ssh.forward_x11 = true
-
-    config.vm.provision "ansible_local" do |ansible|
-      ansible.playbook = "ansible/vagrant.yml"
-    end
-
-    config.vm.provider :virtualbox do |vb|
-        # distinguish VMs by a location-dependent suffix
-        name_suffix = Digest::SHA1.hexdigest(Dir.pwd)[0..6]
-
-        vb.gui = true
-        vb.memory = 4096
-        vb.name = "Artery Vagrant VM " + name_suffix
-        vb.customize [
-					"modifyvm", :id,
-					"--vram", "256",
-      		"--chipset", "ich9",          # チップセット
-					"--ioapic", "on",             # I/O APICを有効化
-      		"--clipboard", "bidirectional",
-      		"--hwvirtex", "on",
-      		"--nestedpaging", "on",
-      		"--largepages", "on",
-      		"--ioapic", "on",
-      		"--pae", "on",
-      		"--paravirtprovider", "kvm",
-				]
-    end
-end
-```

@@ -137,6 +137,8 @@ class SmapleAnswerModeHandler(ModeHandler):
             all = len(self.question_handler.all())
             for question in self.question_handler.all():
                 print(f"\n({index}/{all}): {question.name} (1: はい, 2: いいえ, 3: わからない, 9: 終了)")
+                index += 1
+
                 try:
                     ans = int(input())
 

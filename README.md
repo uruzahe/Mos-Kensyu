@@ -1,5 +1,9 @@
 # Mos-Kensyu
 
+研修の詳細は下記のリンクから閲覧できます．
+
+https://sites.google.com/keio.jp/mos-kensyu/%E3%83%9B%E3%83%BC%E3%83%A0
+
 ## Hot Topic
 texの使い方，原稿の書き方（日本語，英語），スライドの作り方（日本語）
 

@@ -39,7 +39,7 @@ python3 client.py
 
 - akinater.py, server.py, client.py を実行してみる．
 - akinater.pyのコードを理解する
-  - 他人のコードを読みレビュー（良い悪いの評価）ができる．
+  - 他人のコードを読みレビューができる．
   - 標準入力，標準出力，標準エラー，が理解できている． 
 - server.py, client.pyのコードを理解する．
   - socket通信が理解できている．

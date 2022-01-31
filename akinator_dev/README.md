@@ -15,14 +15,14 @@
 コマンドラインにてアキネータを実行する．
 標準入力にて操作を行い，標準出力にて結果を表示する．
 ```sh
-python akinater.py
+python3 akinater.py
 ```
 
  - server.py
 
 アキネータをソケット通信にて操作可能にするサーバを立ち上げる．
 ```sh
-python server.py
+python3 server.py
 ```
 
 - client.py
@@ -30,7 +30,7 @@ python server.py
 アキネータサーバにソケット通信で接続する．
 
 ```sh
-python client.py
+python3 client.py
 ```
 
 # 研修内容（基礎）

@@ -167,12 +167,11 @@ class SmapleAnswerModeHandler(ModeHandler):
 
 class AnswerModeHandler(SmapleAnswerModeHandler):
     def predict_character(self, target_answers, state, previous_expeected_ids=[]):
-        # target_answers は Answerオブジェクトのリストです．
-        # state は回答の途中経過です, ex. [{"question_id": 1, "answer": 1}, ..., {"question_id": 20, "answer": 1}]
-        # previous_expeected_ids は前の回答にて候補となったキャラクターのIDです，再起を使わなければ不必要だと思います．
-        #
         # return では予測したキャラクターのIDとstate を返すようにしましょう．
         # ex. return character_id, state
+        answers = self.data_handler.all()
+        characters = self.character_handler.all()
+        questions = self.question_handler.all()
 
         # ----- 下記のコードを消して，この間にアーキネーターのロジックを書く -----
         return super().predict_character(target_answers, state, previous_expeected_ids)

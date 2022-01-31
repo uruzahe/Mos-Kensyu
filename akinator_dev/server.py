@@ -1,4 +1,6 @@
 import queue
+import os
+import signal
 import sys
 import socket
 import subprocess
@@ -11,6 +13,9 @@ PORT = 10000
 TCP = socket.SOCK_STREAM
 UDP = socket.SOCK_DGRAM
 TRANSPORT_LAYER_PROT = TCP
+
+PIDS = []
+SOCKET_ID2PID = {}
 
 
 def stdout(proc, connection):
@@ -41,8 +46,12 @@ def stdin(proc, connection):
         return
 
 def run(connection):
-    print("process")
+    global PIDS
+
+    print("----- Server is running -----")
     p = subprocess.Popen(["python", "akinator.py"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf-8')
+    print(f"----- Application process id: {p.pid} -----")
+    PIDS.append(p.pid)
 
 
     t_stdin = threading.Thread(target=stdin, args=(p, connection))
@@ -53,8 +62,6 @@ def run(connection):
     t_stdin.join()
     t_stdout.join()
 
-    p.kill()
-    connection.close()
 
 if __name__ == "__main__":
     s = socket.socket(socket.AF_INET, TRANSPORT_LAYER_PROT)
@@ -62,8 +69,11 @@ if __name__ == "__main__":
     s.bind((socket.gethostname(), PORT))  # IPとポート番号を指定します
     s.listen(1)
 
-    while True:
-        connection, address = s.accept()
-        print("run")
-        t = threading.Thread(target=run, args=(connection,))
-        t.start()
+    try:
+        while True:
+            connection, address = s.accept()
+            t = threading.Thread(target=run, args=(connection,))
+            t.start()
+
+    finally:
+        subprocess.Popen(["sh", "finally.sh"])

@@ -73,9 +73,9 @@ class SmapleAnswerModeHandler(ModeHandler):
         aa.smiling()
         print("やあ、私はアキネイター Command Line Inetrface (CLI)です．")
         print("有名な人物やキャラクターを思い浮かべて．魔人が誰でも当ててみせよう．魔人は何でもお見通しさ．")
-        print("5秒後に開始します．")
-        count_down(5)
-
+        # print("5秒後に開始します．")
+        # count_down(5)
+        #
         predicted_character_id, state = self.predict_character(self.data_handler.all(), [], [character.id for character in self.character_handler.all()])
         predict_character = self.character_handler.find_by_id(predicted_character_id)
 
@@ -90,35 +90,37 @@ class SmapleAnswerModeHandler(ModeHandler):
             aa.sad()
             print("(悲しみのアーキネータ君 ...)")
 
-            while True:
-                print("\n----- あなたが思い浮かべたキャラクターの名前を記入してください． -----")
-                predict_name = input()
-                predict_character = self.character_handler.data_by_name(predict_name)
-
-                if predict_character is None:
-                    print(f"{predict_name} はデータベースに存在しません．")
-                    print("\n類似するキャラクター名\n")
-                    print(self.character_handler.similer_data_with_name(predict_name))
-
-                    print(f"\n{predict_name} を新たに登録しますか？(y/n)")
-                    ans = input()
-                    if ans == "y":
-                        self.character_handler.add(predict_name)
-                        predict_character = self.character_handler.data_by_name(predict_name)
-                        break
-
-                    else:
-                        continue
-
-                else:
-                    break
+            # ----- 一旦コメントアウト -----
+            # while True:
+            #     print("\n----- あなたが思い浮かべたキャラクターの名前を記入してください． -----")
+            #     predict_name = input()
+            #     predict_character = self.character_handler.data_by_name(predict_name)
+            #
+            #     if predict_character is None:
+            #         print(f"{predict_name} はデータベースに存在しません．")
+            #         print("\n類似するキャラクター名\n")
+            #         print(self.character_handler.similer_data_with_name(predict_name))
+            #
+            #         print(f"\n{predict_name} を新たに登録しますか？(y/n)")
+            #         ans = input()
+            #         if ans == "y":
+            #             self.character_handler.add(predict_name)
+            #             predict_character = self.character_handler.data_by_name(predict_name)
+            #             break
+            #
+            #         else:
+            #             continue
+            #
+            #     else:
+            #         break
 
         # ----- せっかく回答してくれたので回答履歴として保存する．
-        print(f"\n----- The End of Akinator CLI, 今回の {predict_character.name} に関する回答を保存しますか？(y/n)")
-        ans = input()
-        if ans == "y":
-            for s in state:
-                self.data_handler.add(s["question_id"], predict_character.id, s["answer"])
+        print(f"\n----- The End of Akinator CLI -----")
+        # print(f"\n----- The End of Akinator CLI, 今回の {predict_character.name} に関する回答を保存しますか？(y/n)")
+        # ans = input()
+        # if ans == "y":
+        #     for s in state:
+        #         self.data_handler.add(s["question_id"], predict_character.id, s["answer"])
 
     def mode_add(self):
         while True:

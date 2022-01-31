@@ -5,6 +5,7 @@ class ModeHandler:
             2: "show",
             3: "csv_dump",
             4: "csv_patch",
+            8: "delete_by_id",
             9: "finish"
         }
         self.mode_name = mode_name
@@ -36,6 +37,14 @@ class ModeHandler:
 
             elif mode == 4:
                 self.data_handler.csv_patch()
+
+            elif mode == 8:
+                print("----- 全データ -----")
+                self.data_handler.show()
+
+                print("\n消去するデータのIDを入力してください")
+                id = input("ID: ")
+                self.data_handler.delete_by_id(id)
 
             elif mode == 9:
                 print(f"{self.mode_name} を抜けます．")

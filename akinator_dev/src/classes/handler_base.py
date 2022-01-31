@@ -25,6 +25,9 @@ class HandlerBase:
     def add_data(self, new_data):
         self.update_data(self.data + [new_data])
 
+    def delete_by_id(self, id):
+        self.update_data([d for d in self.data if int(d.id) != int(id) ])
+
     def all(self):
         return self.data
 

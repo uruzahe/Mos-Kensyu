@@ -66,7 +66,7 @@ def run(connection):
 if __name__ == "__main__":
     s = socket.socket(socket.AF_INET, TRANSPORT_LAYER_PROT)
     print(f"{socket.gethostname()}:{PORT}")
-    s.bind((socket.gethostname(), PORT))  # IPとポート番号を指定します
+    s.bind((socket.gethostname(), PORT))
     s.listen(1)
 
     try:

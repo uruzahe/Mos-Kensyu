@@ -1,0 +1,138 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         2  0.0  0.0      0     0 ?        S    Feb02   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [rcu_gp]
+root         4  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [rcu_par_gp]
+root         6  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [kworker/0:0H-kblockd]
+root         8  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [mm_percpu_wq]
+root         9  0.0  0.0      0     0 ?        S    Feb02   0:01  \_ [ksoftirqd/0]
+root        10  0.0  0.0      0     0 ?        I    Feb02   2:49  \_ [rcu_sched]
+root        11  0.0  0.0      0     0 ?        I    Feb02   0:00  \_ [rcu_bh]
+root        12  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [migration/0]
+root        14  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [cpuhp/0]
+root        15  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [cpuhp/1]
+root        16  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [migration/1]
+root        17  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [ksoftirqd/1]
+root        19  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [kworker/1:0H-kblockd]
+root        20  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [kdevtmpfs]
+root        21  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [netns]
+root        22  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [kauditd]
+root        23  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [khungtaskd]
+root        24  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [oom_reaper]
+root        25  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [writeback]
+root        26  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [kcompactd0]
+root        27  0.0  0.0      0     0 ?        SN   Feb02   0:00  \_ [ksmd]
+root        28  0.0  0.0      0     0 ?        SN   Feb02   0:01  \_ [khugepaged]
+root        29  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [crypto]
+root        30  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [kintegrityd]
+root        31  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [kblockd]
+root        32  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [edac-poller]
+root        33  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [devfreq_wq]
+root        34  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [watchdogd]
+root        38  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [kswapd0]
+root        56  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [kthrotld]
+root        57  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [ipv6_addrconf]
+root        66  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [kstrp]
+root       117  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [ttm_swap]
+root       119  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [irq/18-vmwgfx]
+root       121  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [ata_sff]
+root       123  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [scsi_eh_0]
+root       124  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [scsi_tmf_0]
+root       170  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [kworker/1:1H-kblockd]
+root       195  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [kworker/u5:0]
+root       197  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [kworker/0:1H-kblockd]
+root       198  0.0  0.0      0     0 ?        S    Feb02   0:00  \_ [jbd2/sda1-8]
+root       199  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [ext4-rsv-conver]
+root       340  0.0  0.0      0     0 ?        I<   Feb02   0:00  \_ [iprt-VBoxWQueue]
+root      5422  0.0  0.0      0     0 ?        I    Feb03   0:23  \_ [kworker/0:2-mm_percpu_wq]
+root      7167  0.0  0.0      0     0 ?        I    Feb03   0:00  \_ [kworker/u4:1-events_unbound]
+root      7405  0.0  0.0      0     0 ?        I    Feb03   0:03  \_ [kworker/1:2-mm_percpu_wq]
+root      8277  0.0  0.0      0     0 ?        I    00:27   0:00  \_ [kworker/u4:2-events_unbound]
+root      8290  0.0  0.0      0     0 ?        I    00:53   0:00  \_ [kworker/0:1-cgroup_destroy]
+root      8308  0.0  0.0      0     0 ?        I    01:34   0:00  \_ [kworker/1:1]
+root         1  0.0  0.1 170576  6168 ?        Ss   Feb02   0:02 /sbin/init
+root       248  0.0  0.1  26700  5528 ?        Ss   Feb02   0:00 /lib/systemd/systemd-journald
+root       264  0.0  0.0  23124  1340 ?        Ss   Feb02   0:00 /lib/systemd/systemd-udevd
+root       299  0.0  0.1   8084  4808 ?        Ss   Feb02   0:02 /usr/sbin/haveged --Foreground --verbose=1 -w 1024
+avahi      301  0.0  0.0   8284   388 ?        Ss   Feb02   0:00 avahi-daemon: running [buster.local]
+avahi      406  0.0  0.0   8156   316 ?        S    Feb02   0:00  \_ avahi-daemon: chroot helper
+root       303  0.0  0.0 225824   948 ?        Ssl  Feb02   0:00 /usr/sbin/rsyslogd -n -iNONE
+message+   304  0.0  0.0   9868  1428 ?        Ss   Feb02   0:08 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root       306  0.0  0.0  15728  3696 ?        Ss   Feb02   0:15 /usr/sbin/connmand -n
+root       308  0.0  0.0  19500  2564 ?        Ss   Feb02   0:00 /lib/systemd/systemd-logind
+root       309  0.0  0.0 318244  1276 ?        Ssl  Feb02   0:00 /usr/sbin/ModemManager --filter-policy=strict
+root       310  0.0  0.0   6968   276 ?        Ss   Feb02   0:00 /usr/sbin/dundee -n
+root       326  0.0  0.0 398528  3528 ?        Ssl  Feb02   0:00 /usr/lib/udisks2/udisksd
+root       327  0.0  0.0  19768   604 ?        Ss   Feb02   0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+root       334  0.0  0.0   8772  1196 ?        Ss   Feb02   0:00 /usr/sbin/ofonod -n
+root       464  0.0  0.1 109132  7696 ?        Ssl  Feb02   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+_chrony    473  0.0  0.0  13012   372 ?        S    Feb02   0:01 /usr/sbin/chronyd -F -1
+_chrony    475  0.0  0.0   7016   296 ?        S    Feb02   0:00  \_ /usr/sbin/chronyd -F -1
+root       474  0.0  0.0   9488  3092 ?        Ss   Feb02   0:00 /sbin/dhclient -4 -v -i -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+root       481  0.0  0.0  15852   864 ?        Ss   Feb02   0:00 /usr/sbin/sshd -D
+root      1814  0.0  0.0  16948  1144 ?        Ss   Feb02   0:00  \_ sshd: vagrant [priv]
+vagrant   1820  0.0  0.0  17256  1552 ?        S    Feb02   0:34  |   \_ sshd: vagrant@pts/0
+vagrant   1821  0.0  0.0   7264  1700 pts/0    Ss   Feb02   0:00  |       \_ -bash
+vagrant   3027  0.0  1.2  88060 50292 pts/0    S+   Feb02   0:25  |           \_ /usr/bin/python3 /usr/local/bin/pipenv shell
+vagrant   3032  0.0  0.1   8204  5752 pts/1    Ss+  Feb02   0:00  |               \_ /bin/bash -i
+root      4670  0.0  0.0  16948  1140 ?        Ss   Feb03   0:00  \_ sshd: vagrant [priv]
+vagrant   4676  0.0  0.0  17256  1364 ?        S    Feb03   0:06  |   \_ sshd: vagrant@pts/2
+vagrant   4677  0.0  0.0   6808  1604 pts/2    Ss   Feb03   0:00  |       \_ -bash
+vagrant   4688  0.0  1.2  88076 50304 pts/2    S+   Feb03   0:06  |           \_ /usr/bin/python3 /usr/local/bin/pipenv shell
+vagrant   4693  0.0  0.1   7264  4732 pts/3    Ss+  Feb03   0:00  |               \_ /bin/bash -i
+root      5815  0.0  0.0  16948  1148 ?        Ss   Feb03   0:00  \_ sshd: vagrant [priv]
+vagrant   5821  0.0  0.0  17256  2352 ?        S    Feb03   0:00      \_ sshd: vagrant@pts/4
+vagrant   5822  0.0  0.1   7264  4756 pts/4    Ss   Feb03   0:00          \_ -bash
+vagrant   8414  0.0  0.0   9548  3072 pts/4    R+   04:06   0:00              \_ ps auxf
+root       500  0.0  0.0   7264  1344 ?        Ss   Feb02   0:00 /usr/sbin/cron -f
+root       505  0.0  0.0   2648   112 tty1     Ss+  Feb02   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root       565  0.0  0.0 100876   360 ?        S    Feb02   0:00 VBoxClient --vmsvga
+root       566  0.0  0.0 101008   404 ?        S    Feb02   0:00  \_ VBoxClient --vmsvga
+root       576  0.0  0.0 136568  1052 ?        Ssl  Feb02   0:00 /usr/bin/sddm
+root       599 10.3  1.7 303556 68748 tty7     Ssl+ Feb02 317:12  \_ /usr/lib/xorg/Xorg -nolisten tcp -auth /var/run/sddm/{2c606a6d-10c5-4654-87d4-31c8b44ab0b9} -background none -noreset -displayfd 17 -seat seat0 vt7
+root       643  0.0  0.0  59492  1136 ?        S    Feb02   0:00  \_ /usr/lib/x86_64-linux-gnu/sddm/sddm-helper --socket /tmp/sddm-authb82121bc-d89e-41b0-9122-fc7d088eb646 --id 1 --start startlxqt --user vagrant --autologin
+vagrant    656  0.0  0.0 256484  3416 ?        Sl   Feb02   0:00      \_ lxqt-session
+vagrant    728  0.0  0.0   5852   472 ?        Ss   Feb02   0:00          \_ /usr/bin/ssh-agent startlxqt
+vagrant    738  0.0  0.1  65120  5116 ?        S    Feb02   0:01          \_ /usr/bin/xfwm4
+vagrant    757  0.0  0.9 764828 37228 ?        Sl   Feb02   0:01          \_ /usr/bin/pcmanfm-qt --desktop --profile=lxqt
+vagrant    758  0.0  0.0 330060  3228 ?        Sl   Feb02   0:00          \_ /usr/bin/lxqt-globalkeysd
+vagrant    761  0.0  0.2 356652 11964 ?        Sl   Feb02   0:00          \_ /usr/bin/lxqt-notificationd
+vagrant    763  0.0  0.7 718924 31924 ?        Sl   Feb02   0:40          \_ /usr/bin/lxqt-panel
+vagrant    764  0.0  0.0 409144  3228 ?        Sl   Feb02   0:00          \_ /usr/bin/lxqt-policykit-agent
+vagrant    765  0.0  0.1 262532  6360 ?        Sl   Feb02   0:00          \_ /usr/bin/lxqt-runner
+vagrant    887  0.0  1.0 289892 43168 ?        Sl   Feb02   0:01          \_ /usr/bin/lxqt-powermanagement
+root       587  0.0  0.0 289212  1320 ?        Sl   Feb02   0:21 /usr/sbin/VBoxService --pidfile /var/run/vboxadd-service.sh
+vagrant    645  0.0  0.0  21244  2512 ?        Ss   Feb02   0:00 /lib/systemd/systemd --user
+vagrant    646  0.0  0.0 105220  2372 ?        S    Feb02   0:00  \_ (sd-pam)
+vagrant    668  0.0  0.0   9452  1740 ?        Ss   Feb02   0:01  \_ /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+vagrant    739  0.0  0.0 312424   640 ?        Ssl  Feb02   0:00  \_ /usr/lib/at-spi2-core/at-spi-bus-launcher
+vagrant    744  0.0  0.0   8968   472 ?        S    Feb02   0:00  |   \_ /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+vagrant    746  0.0  0.0 174024   812 ?        Sl   Feb02   0:00  \_ /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+vagrant    750  0.0  0.0  16564   620 ?        S    Feb02   0:00  \_ /usr/lib/x86_64-linux-gnu/xfce4/xfconf/xfconfd
+vagrant    790  0.0  0.0 440776  1396 ?        S<sl Feb02   0:00  \_ /usr/bin/pulseaudio --daemonize=no
+vagrant    805  0.0  0.0 238908   952 ?        Ssl  Feb02   0:00  \_ /usr/lib/gvfs/gvfsd
+vagrant    833  0.0  0.0 386736   972 ?        Sl   Feb02   0:00  |   \_ /usr/lib/gvfs/gvfsd-trash --spawner :1.15 /org/gtk/gvfs/exec_spaw/0
+vagrant    831  0.0  0.0 381448   676 ?        Sl   Feb02   0:00  \_ /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+vagrant    848  0.0  0.0 426596  3512 ?        Ssl  Feb02   0:00  \_ /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+vagrant    854  0.0  0.0 235172   508 ?        Ssl  Feb02   0:00  \_ /usr/lib/gvfs/gvfs-goa-volume-monitor
+vagrant    858  0.0  0.0 236960   644 ?        Ssl  Feb02   0:00  \_ /usr/lib/gvfs/gvfs-mtp-volume-monitor
+vagrant    862  0.0  0.0 317848  2892 ?        Ssl  Feb02   0:00  \_ /usr/lib/gvfs/gvfs-afc-volume-monitor
+vagrant    867  0.0  0.0 239440   692 ?        Ssl  Feb02   0:00  \_ /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+vagrant   2924  0.0  0.0 239208   972 ?        Sl   Feb02   0:00  \_ /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+vagrant   2929  0.0  0.0 265324  2940 ?        Sl   Feb02   0:00  \_ /usr/bin/kwalletd5
+vagrant    692  0.0  0.0  27260   328 ?        S    Feb02   0:00 /usr/bin/VBoxClient --clipboard
+vagrant    693  0.0  0.0  95520  1588 ?        Sl   Feb02   0:00  \_ /usr/bin/VBoxClient --clipboard
+vagrant    700  0.0  0.0  27260   320 ?        S    Feb02   0:00 /usr/bin/VBoxClient --display
+vagrant    703  0.0  0.0  27260   608 ?        S    Feb02   0:00  \_ /usr/bin/VBoxClient --display
+vagrant    707  0.0  0.0  27260   324 ?        S    Feb02   0:00 /usr/bin/VBoxClient --seamless
+vagrant    715  0.0  0.0  93444   376 ?        Sl   Feb02   0:00  \_ /usr/bin/VBoxClient --seamless
+vagrant    713  0.0  0.0  27260   324 ?        S    Feb02   0:00 /usr/bin/VBoxClient --draganddrop
+vagrant    716  0.1  0.0  93960   376 ?        Sl   Feb02   3:53  \_ /usr/bin/VBoxClient --draganddrop
+vagrant    754  0.0  0.0 236392   560 ?        Sl   Feb02   0:00 /usr/lib/geoclue-2.0/demos/agent
+vagrant    767  0.0  0.0  24832  2916 ?        S    Feb02   0:01 /usr/bin/xscreensaver -no-splash
+vagrant   8377 11.1  0.0      0     0 ?        ZN   03:54   1:19  \_ [ripples] <defunct>
+vagrant   8386 27.7  0.7  70212 28768 ?        SN   04:04   0:31  \_ xlyap -root
+vagrant    770  0.0  0.3  56664 15520 ?        S    Feb02   0:00 /usr/bin/python3 /usr/share/system-config-printer/applet.py
+rtkit      807  0.0  0.0 152648   256 ?        SNsl Feb02   0:01 /usr/lib/rtkit/rtkit-daemon
+root       877  0.0  0.0 249264  4020 ?        Ssl  Feb02   0:03 /usr/lib/upower/upowerd
+vagrant    889  0.0  0.3 259984 13320 ?        Sl   Feb02   0:04 /usr/bin/qlipper
+root      2413  0.0  0.0 235840   776 ?        Ssl  Feb02   0:00 /usr/lib/policykit-1/polkitd --no-debug

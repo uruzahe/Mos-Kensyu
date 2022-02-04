@@ -49,7 +49,7 @@ def run(connection):
     global PIDS
 
     print("----- Server is running -----")
-    p = subprocess.Popen(["python", "akinator.py"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf-8')
+    p = subprocess.Popen(["python3", "akinator.py"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf-8')
     print(f"----- Application process id: {p.pid} -----")
     PIDS.append(p.pid)
 

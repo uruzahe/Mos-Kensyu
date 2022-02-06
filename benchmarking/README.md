@@ -2,6 +2,10 @@
 
 Under construction ...
 
+``` sh
+sh benchmark.sh python3 ./codes/sample.py
+# プログラムが実行完了すると bench_result.txt が出力される．
+```
 <!--
 この研修では下記の項目を学びます．
 - シェルの基本的な使い方

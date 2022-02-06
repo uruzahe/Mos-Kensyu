@@ -3,7 +3,7 @@
 Under construction ...
 
 ``` sh
-./benchmark python3 ./codes/sample.py
+./benchmark python3 ./codes/sample.py 10 100000
 # プログラムが実行完了すると bench_result.txt が出力される．
 ```
 <!--

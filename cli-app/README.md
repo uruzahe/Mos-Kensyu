@@ -12,6 +12,11 @@
 - コマンドラインで実行可能なアプリケーション(CLI-App)
   - 標準入力によって処理を実行し，処理結果を標準出力するプログラム
   - 作るものはなんでもOKです．
+  - 特に作りたいものがなければ下記の項目を参考に制作物を探してください．
+    - https://github.com/agarrharr/awesome-cli-apps
+    - https://www.omgubuntu.co.uk/2021/11/best-command-line-tools-ubuntu-linux
+    - ToDoリスト, ゲーム，　(定番なので作ってみては)
+    - データベース（mysqlコマンドみたいなイメージ）
 
 - CLI-Appへの操作を通信にて受け付けるプログラム(Server)
   - Socket通信やWebAPI等によって入力を受け取り，受け取った入力をCLI-Appへの標準入力に書き込むプログラム.

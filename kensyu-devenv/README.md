@@ -39,9 +39,9 @@ git clone --recurse-submodule https://github.com/riebl/artery.git
 cd artery
 ```
 
-2. arteryディレクトリ内のVagrantfile中にて "vb.memory = 2048" を "vb.memory = 4096" に変更する．
+2. arteryディレクトリ内のVagrantfile中にて "vb.memory = 2048" を "vb.memory = 4096" に変更する(わからなかったら[サンプルを参考に](https://github.com/uruzahe/Mos-Kensyu/blob/master/kensyu-devenv/Vagrantfile-sample))．
 
-3. Vagrantfile を下記のように修正
+3. Vagrantfile を下記のように修正(わからなかったら[サンプルを参考に](https://github.com/uruzahe/Mos-Kensyu/blob/master/kensyu-devenv/Vagrantfile-sample))．
 ```
 Vagrant.configure("2") do |config|
     config.vm.box = "debian/contrib-buster64"

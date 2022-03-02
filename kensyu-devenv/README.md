@@ -35,6 +35,10 @@ https://qiita.com/oreo3@github/items/4054a4120ccc249676d9
 1. ローカル環境にて下記のコマンドを実行する．
 ``` sh
 # ローカル環境
+# 研修用のコードをダウンロード
+git clone https://github.com/uruzahe/Mos-Kensyu.git
+cd Mos-Kensyu/kensyu-devenv/
+# 研修環境をダウンロード
 git clone --recurse-submodule https://github.com/riebl/artery.git
 cd artery
 ```

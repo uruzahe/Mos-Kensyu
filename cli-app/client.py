@@ -3,6 +3,7 @@ import threading
 
 MAX_RECV_BYTE = 4096
 IP = 'buster'
+IP = '127.0.0.1'
 PORT = 10000
 SERVER = (IP, PORT)
 

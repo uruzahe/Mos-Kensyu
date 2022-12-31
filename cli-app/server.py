@@ -22,6 +22,7 @@ def stdout(proc, connection):
     try:
         while proc.poll() is None:
             proc.stdout.flush()
+            # print("-----")
             stdout_text = proc.stdout.readline()
 
             print(stdout_text, end="")
@@ -50,6 +51,7 @@ def run(connection):
 
     print("----- Server is running -----")
     p = subprocess.Popen(["python3", "akinator.py"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf-8')
+    # p = subprocess.Popen(["./a.out"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding='utf-8')
     print(f"----- Application process id: {p.pid} -----")
     PIDS.append(p.pid)
 

@@ -50,7 +50,7 @@ cd artery
 Vagrant.configure("2") do |config|
     config.vm.box = "debian/contrib-buster64"
     # ----- 以下追加 -----
-    config.vm.synced_folder "./../../../Mos-Kensyu/", "/home/vagrant/Mos-Kensyu"
+    config.vm.synced_folder "./../../Mos-Kensyu/", "/home/vagrant/Mos-Kensyu"
     config.ssh.forward_agent = true
     config.ssh.forward_x11 = true
 ```

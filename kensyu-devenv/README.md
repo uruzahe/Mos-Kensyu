@@ -12,7 +12,13 @@ https://github.com/uruzahe/Mos-Kensyu/tree/220116/sumo#git-%E3%82%92%E8%87%AA%E5
 
 #### VirtualBox
 
+通常は以下からダウンロードする．
+
 https://www.virtualbox.org/
+
+MacでM1チップの人は以下からダウンロードする．
+
+https://www.virtualbox.org/wiki/Downloads
 
 バーチャルボックスのインストールが完了したら下記のコマンドにてバーチャルボックスのバージョンを確認する．
 ```sh
